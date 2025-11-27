@@ -39,43 +39,41 @@ This project uses features like location, house age, number of rooms, and median
 
 ### Geographic Distribution of House Prices
 
-![Geographic Distribution](SRC/g3.png)
+![Geographic Distribution](SRC/g4.png)
 
 **Key Insights:**
 - Coastal regions (red/orange dots) have significantly higher house values
 - Inland areas show lower median prices (blue dots)
 - Clear clustering of expensive housing near major coastal cities
+- Geographic visualization clearly shows California's shape with color-coded house prices
 
 ---
 
 ### Correlation Analysis
 
-![Correlation Heatmap - Full Features](SRC/g2.png)
+![Correlation Heatmap - Full Features](SRC/g1.png)
 
-![Correlation Heatmap - Key Features](SRC/g4.png)
-
-![Correlation Heatmap - Clean](SRC/g6.png)
+![Correlation Heatmap - Key Features](SRC/g2.png)
 
 **Key Findings:**
 - `median_income` has the **strongest positive correlation (0.69)** with house prices
 - Room-related features (`total_rooms`, `total_bedrooms`, `households`) are highly correlated with each other (0.9+)
 - Geographic features show negative correlations with house values
+- Strong multicollinearity detected between bedroom, room, and household features
 
 ---
 
 ### Feature Distributions
 
-#### Original Data Distributions
-![Original Distributions](SRC/g5.png)
-
-#### After Preprocessing
-![Processed Distributions](SRC/g7.png)
+#### Original Data Distributions (Before Preprocessing)
+![Original Distributions](SRC/g3.png)
 
 **Observations:**
 - Most features show right-skewed distributions
 - `median_house_value` has a noticeable spike at $500,000 (dataset ceiling)
 - `median_income` follows a roughly normal distribution
 - Population and household features are heavily right-skewed
+- Geographic features (latitude/longitude) show bimodal distributions
 
 ---
 
@@ -97,12 +95,13 @@ R² Score:                        0.6695 (66.95%)
 
 ### Actual vs Predicted Prices
 
-![Actual vs Predicted](SRC/g1.png)
+![Actual vs Predicted](SRC/g5.png)
 
 **Analysis:**
 - Most predictions cluster around the diagonal red line (perfect predictions)
 - The model performs well for houses in the $100,000 - $400,000 range
 - The vertical clustering at ~$500k shows the dataset's price ceiling
+- Some scatter indicates room for model improvement
 
 ---
 
@@ -199,6 +198,4 @@ plt.show()
 - **Scikit-learn** - Machine learning algorithms and metrics
 - **Jupyter Notebook** - Interactive development environment
 
----
 
-⭐ **If you found this project helpful, please give it a star!**
