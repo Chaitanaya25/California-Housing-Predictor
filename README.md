@@ -39,7 +39,7 @@ This project uses features like location, house age, number of rooms, and median
 
 ### Geographic Distribution of House Prices
 
-![Geographic Distribution](images/g3.png)
+![Geographic Distribution](SRC/g3.png)
 
 **Key Insights:**
 - Coastal regions (red/orange dots) have significantly higher house values
@@ -50,11 +50,11 @@ This project uses features like location, house age, number of rooms, and median
 
 ### Correlation Analysis
 
-![Correlation Heatmap - Full Features](images/g2.png)
+![Correlation Heatmap - Full Features](SRC/g2.png)
 
-![Correlation Heatmap - Key Features](images/g4.png)
+![Correlation Heatmap - Key Features](SRC/g4.png)
 
-![Correlation Heatmap - Clean](images/g6.png)
+![Correlation Heatmap - Clean](SRC/g6.png)
 
 **Key Findings:**
 - `median_income` has the **strongest positive correlation (0.69)** with house prices
@@ -66,10 +66,10 @@ This project uses features like location, house age, number of rooms, and median
 ### Feature Distributions
 
 #### Original Data Distributions
-![Original Distributions](images/g5.png)
+![Original Distributions](SRC/g5.png)
 
 #### After Preprocessing
-![Processed Distributions](images/g7.png)
+![Processed Distributions](SRC/g7.png)
 
 **Observations:**
 - Most features show right-skewed distributions
@@ -97,7 +97,7 @@ R² Score:                        0.6695 (66.95%)
 
 ### Actual vs Predicted Prices
 
-![Actual vs Predicted](images/g1.png)
+![Actual vs Predicted](SRC/g1.png)
 
 **Analysis:**
 - Most predictions cluster around the diagonal red line (perfect predictions)
@@ -199,3 +199,6 @@ plt.show()
 - **Scikit-learn** - Machine learning algorithms and metrics
 - **Jupyter Notebook** - Interactive development environment
 
+---
+
+⭐ **If you found this project helpful, please give it a star!**
