@@ -1,3 +1,7 @@
+I can see your image files have spaces in their names. Let me create the correct README with the **exact file names** from your SRC folder:
+
+---
+
 # 🏠 California Housing Price Prediction
 
 A machine learning project that predicts median house prices in California using the California Housing Dataset. This project demonstrates data exploration, model training, and evaluation.
@@ -39,7 +43,7 @@ This project uses features like location, house age, number of rooms, and median
 
 ### Geographic Distribution of House Prices
 
-![Geographic Distribution](SRC/g4.png)
+![Geographic Distribution](SRC/Geographic%20Distribution%20Map%20(latlong%20scatter%20with%20house%20values).png)
 
 **Key Insights:**
 - Coastal regions (red/orange dots) have significantly higher house values
@@ -51,9 +55,9 @@ This project uses features like location, house age, number of rooms, and median
 
 ### Correlation Analysis
 
-![Correlation Heatmap - Full Features](SRC/g1.png)
+![Correlation Heatmap - Full Features](SRC/Correlation%20Heatmap%20RAW.png)
 
-![Correlation Heatmap - Key Features](SRC/g2.png)
+![Correlation Heatmap - Clean](SRC/Correlation%20Heatmap%20-%20Clean.png)
 
 **Key Findings:**
 - `median_income` has the **strongest positive correlation (0.69)** with house prices
@@ -66,7 +70,10 @@ This project uses features like location, house age, number of rooms, and median
 ### Feature Distributions
 
 #### Original Data Distributions (Before Preprocessing)
-![Original Distributions](SRC/g3.png)
+![Original Distributions](SRC/Geographic%20Distribution%20Map.png)
+
+#### After Preprocessing
+![Processed Distributions](SRC/Processed%20Distributions%20(after%20preprocessing).png)
 
 **Observations:**
 - Most features show right-skewed distributions
@@ -95,7 +102,7 @@ R² Score:                        0.6695 (66.95%)
 
 ### Actual vs Predicted Prices
 
-![Actual vs Predicted](SRC/g5.png)
+![Actual vs Predicted](SRC/Actual%20vs%20Predicted.png)
 
 **Analysis:**
 - Most predictions cluster around the diagonal red line (perfect predictions)
@@ -197,5 +204,4 @@ plt.show()
 - **Seaborn** - Statistical visualizations
 - **Scikit-learn** - Machine learning algorithms and metrics
 - **Jupyter Notebook** - Interactive development environment
-
 
