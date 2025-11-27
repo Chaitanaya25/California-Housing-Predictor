@@ -43,7 +43,7 @@ This project uses features like location, house age, number of rooms, and median
 
 ### Geographic Distribution of House Prices
 
-![Geographic Distribution](SRC/Geographic%20Distribution%20Map%20(latlong%20scatter%20with%20house%20values).png)
+![Geographic Distribution](SRC/Geographic%20Distribution%20Map.png)
 
 **Key Insights:**
 - Coastal regions (red/orange dots) have significantly higher house values
@@ -70,7 +70,7 @@ This project uses features like location, house age, number of rooms, and median
 ### Feature Distributions
 
 #### Original Data Distributions (Before Preprocessing)
-![Original Distributions](SRC/Geographic%20Distribution%20Map.png)
+![Original Distributions](SRC/Geographic%20Distribution%20Map%20(latlong%20scatter%20with%20house%20values).png)
 
 
 
