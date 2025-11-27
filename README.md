@@ -72,8 +72,7 @@ This project uses features like location, house age, number of rooms, and median
 #### Original Data Distributions (Before Preprocessing)
 ![Original Distributions](SRC/Geographic%20Distribution%20Map.png)
 
-#### After Preprocessing
-![Processed Distributions](SRC/Processed%20Distributions%20(after%20preprocessing).png)
+
 
 **Observations:**
 - Most features show right-skewed distributions
@@ -102,7 +101,7 @@ R² Score:                        0.6695 (66.95%)
 
 ### Actual vs Predicted Prices
 
-![Actual vs Predicted](SRC/Actual%20vs%20Predicted.png)
+![Actual vs Predicted](SRC/Processed%20Distributions%20(after%20preprocessing).png)
 
 **Analysis:**
 - Most predictions cluster around the diagonal red line (perfect predictions)
