@@ -1,42 +1,18 @@
 # 🏠 California Housing Price Prediction
 
-A comprehensive machine learning project that predicts median house prices in California using the California Housing Dataset. This project demonstrates end-to-end ML workflow including data exploration, preprocessing, feature engineering, model training, and evaluation.
+A machine learning project that predicts median house prices in California using the California Housing Dataset. This project demonstrates data exploration, model training, and evaluation.
 
 ---
 
 ## 📊 Project Overview
 
-This project uses various features like location, house age, number of rooms, and median income to predict house prices in California districts. The model achieves an R² score of **0.6695**, explaining approximately **67%** of the variance in house prices.
+This project uses features like location, house age, number of rooms, and median income to predict house prices in California districts. The model achieves an R² score of **0.6695**, explaining approximately **67%** of the variance in house prices.
 
 ### **Key Highlights:**
 - 🎯 End-to-end machine learning pipeline
 - 📈 Comprehensive exploratory data analysis (EDA)
-- 🔧 Feature engineering and preprocessing
 - 📊 Multiple visualization techniques
 - 🤖 Model evaluation with multiple metrics
-
----
-
-## 🗂️ Project Structure
-```
-ML_Projects/
-│
-├── DATA/
-│   ├── RAW/
-│   │   └── housing.csv          # Original California Housing dataset
-│   └── PRECOSSED/               # Preprocessed data files
-│
-├── NOTEBOOKS/
-│   └── 01_EDA.ipynb            # Exploratory Data Analysis & Model Training
-│
-├── SRC/                         # Source code (if any)
-│
-├── images/                      # Visualization screenshots
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
-```
 
 ---
 
@@ -63,8 +39,7 @@ ML_Projects/
 
 ### Geographic Distribution of House Prices
 
-![Geographic Distribution](images/geographic_distribution.png)
-*House prices colored by value - clearly showing higher prices in coastal areas, especially around San Francisco and Los Angeles*
+![Geographic Distribution](images/g3.png)
 
 **Key Insights:**
 - Coastal regions (red/orange dots) have significantly higher house values
@@ -75,27 +50,26 @@ ML_Projects/
 
 ### Correlation Analysis
 
-#### Full Feature Correlation Heatmap
-![Correlation Heatmap 1](images/correlation_heatmap_full.png)
+![Correlation Heatmap - Full Features](images/g2.png)
 
-#### Key Features Correlation
-![Correlation Heatmap 2](images/correlation_heatmap_key.png)
+![Correlation Heatmap - Key Features](images/g4.png)
+
+![Correlation Heatmap - Clean](images/g6.png)
 
 **Key Findings:**
 - `median_income` has the **strongest positive correlation (0.69)** with house prices
 - Room-related features (`total_rooms`, `total_bedrooms`, `households`) are highly correlated with each other (0.9+)
 - Geographic features show negative correlations with house values
-- Ocean proximity categories show varying impacts on prices
 
 ---
 
 ### Feature Distributions
 
 #### Original Data Distributions
-![Original Distributions](images/distributions_original.png)
+![Original Distributions](images/g5.png)
 
 #### After Preprocessing
-![Processed Distributions](images/distributions_processed.png)
+![Processed Distributions](images/g7.png)
 
 **Observations:**
 - Most features show right-skewed distributions
@@ -117,33 +91,18 @@ R² Score:                        0.6695 (66.95%)
 **Interpretation:**
 - The model's predictions are off by approximately **$65,603** on average
 - The model explains **67%** of the variance in house prices
-- Typical prediction error is around **$47,352** (without penalty for large errors)
+- Typical prediction error is around **$47,352**
 
 ---
 
 ### Actual vs Predicted Prices
 
-![Actual vs Predicted](images/actual_vs_predicted.png)
+![Actual vs Predicted](images/g1.png)
 
 **Analysis:**
 - Most predictions cluster around the diagonal red line (perfect predictions)
 - The model performs well for houses in the $100,000 - $400,000 range
-- Some visible scatter indicates room for improvement
-- The vertical line at ~$500k shows the dataset's price ceiling
-
----
-
-### Residual Analysis
-
-![Residual Plot](images/residual_plot.png)
-
-**Findings:**
-- Residuals show a **slight diagonal pattern**, indicating systematic errors
-- The model tends to:
-  - Underestimate lower-priced houses
-  - Overestimate higher-priced houses
-- Most residuals fall within ±$200,000 range
-- Suggests the need for feature scaling or non-linear models
+- The vertical clustering at ~$500k shows the dataset's price ceiling
 
 ---
 
@@ -162,8 +121,6 @@ print(data.head())
 print(data.info())
 ```
 
----
-
 ### 2. Train-Test Split
 ```python
 from sklearn.model_selection import train_test_split
@@ -178,8 +135,6 @@ X_train, X_test_raw, y_train, y_test_raw = train_test_split(
 )
 ```
 
----
-
 ### 3. Model Training
 ```python
 from sklearn.linear_model import LinearRegression
@@ -191,8 +146,6 @@ model.fit(X_train, y_train)
 # Make predictions
 y_pred = model.predict(X_test_raw)
 ```
-
----
 
 ### 4. Model Evaluation
 ```python
@@ -208,8 +161,6 @@ print(f"Root Mean Squared Error: ${rmse:,.2f}")
 print(f"Mean Absolute Error: ${mae:,.2f}")
 print(f"R² Score: {r2:.4f}")
 ```
-
----
 
 ### 5. Visualization
 ```python
@@ -248,80 +199,3 @@ plt.show()
 - **Scikit-learn** - Machine learning algorithms and metrics
 - **Jupyter Notebook** - Interactive development environment
 
----
-
-## 📥 Installation & Usage
-
-### Prerequisites
-```bash
-python >= 3.8
-pip
-```
-
-### Setup
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/YOUR_USERNAME/california-housing-prediction.git
-cd california-housing-prediction
-```
-
-2. **Install required packages**
-```bash
-pip install -r requirements.txt
-```
-
-3. **Run the Jupyter Notebook**
-```bash
-jupyter notebook NOTEBOOKS/01_EDA.ipynb
-```
-
----
-
-## 📈 Future Improvements
-
-- [ ] Implement feature scaling (StandardScaler/MinMaxScaler) to improve model performance
-- [ ] Try advanced algorithms (Random Forest, XGBoost, Neural Networks)
-- [ ] Perform hyperparameter tuning using GridSearchCV
-- [ ] Add cross-validation for more robust evaluation
-- [ ] Feature engineering (create new features like rooms_per_household)
-- [ ] Handle the $500k price ceiling issue
-- [ ] Deploy the model using Flask/Streamlit
-
----
-
-## 🎓 Key Learnings
-
-1. **Data Exploration is Critical**: Understanding data distributions and correlations helps identify important features
-2. **Geographic Features Matter**: Location significantly impacts house prices in California
-3. **Feature Engineering Opportunities**: Room ratios and derived features could improve predictions
-4. **Model Limitations**: The diagonal pattern in residuals suggests the need for:
-   - Feature scaling
-   - Non-linear models
-   - Better feature engineering
-
----
-
-## 📧 Contact
-
-**Your Name**
-- GitHub: [@your_username](https://github.com/your_username)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
-- Email: your.email@example.com
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 🙏 Acknowledgments
-
-- California Housing Dataset from [Scikit-learn](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset)
-- Inspired by various machine learning tutorials and courses
-
----
-
-⭐ **If you found this project helpful, please consider giving it a star!**
